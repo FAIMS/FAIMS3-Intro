@@ -15,9 +15,9 @@ jobs:
         with:
           name: PDF
           path: main.pdf
-      - run: echo ::set-env name=REPONAME::${GITHUB_REPOSITORY#*/}
+      - run: echo ::set-output name=REPONAME::${GITHUB_REPOSITORY#*/}
         # https://stackoverflow.com/a/61560798
-      - run: echo ::set-env name=TAG::${GITHUB_REF#refs/*/}
+      - run: echo ::set-output name=TAG::${GITHUB_REF#refs/*/}
         # https://stackoverflow.com/a/58178121
       - name: Rename for release
         if: startsWith(github.ref, 'refs/tags/')
