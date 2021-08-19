@@ -25,8 +25,7 @@ jobs:
           RELEASE: ${{ steps.vars.outputs.TAG}}
           REPO: ${{ steps.vars.outputs.REPONAME}}
         run: |
-          cp "main.pdf" "$REPO-$RELEASE.pdf"
-        done      
+          cp "main.pdf" "$REPO-$RELEASE.pdf"        
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
