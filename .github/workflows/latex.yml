@@ -28,10 +28,13 @@ jobs:
           cp main.pdf $REPO-$RELEASE.pdf
           ls *.pdf
       - uses: actions/upload-artifact@v2
+        env:
+          RELEASE: ${{ steps.vars.outputs.tag}}
+          REPO: ${{ steps.vars.outputs.repo}}
         with:
           name: PDF
           path: |
-            ./*.pdf
+            $REPO-$RELEASE.pdf
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -40,4 +43,4 @@ jobs:
           REPO: ${{ steps.vars.outputs.REPONAME}}
         with:
           files: |
-            *.pdf        
+            $REPO-$RELEASE.pdf    
