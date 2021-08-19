@@ -11,3 +11,7 @@ jobs:
         with:
           root_file: main.tex
           latexmk_use_xelatex: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: output.pdf
