@@ -24,14 +24,14 @@ jobs:
           REPO: ${{ steps.vars.outputs.repo}}
         run: |
           echo $REPO
-          echo $RELEASE
-          ls *.pdf
-          cp main.pdf "$REPO-$RELEASE.pdf"        
+          echo $RELEASE          
+          cp main.pdf $REPO-$RELEASE.pdf
           ls *.pdf
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: main.pdf
+          path: |
+            ./*.pdf
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
