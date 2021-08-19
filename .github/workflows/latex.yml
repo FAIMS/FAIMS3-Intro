@@ -15,3 +15,24 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+      - run: echo ::set-env name=REPONAME::${GITHUB_REPOSITORY#*/}
+        # https://stackoverflow.com/a/61560798
+      - run: echo ::set-env name=TAG::${GITHUB_REF#refs/*/}
+        # https://stackoverflow.com/a/58178121
+      - name: Rename for release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE: ${{ steps.vars.outputs.TAG}}
+          REPO: ${{ steps.vars.outputs.REPONAME}}
+        run: |
+          cp "main.pdf" "$REPO-$RELEASE.pdf"
+        done      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE: ${{ steps.vars.outputs.TAG}}
+          REPO: ${{ steps.vars.outputs.REPONAME}}
+        with:
+          files: |
+            $REPO-$RELEASE.pdf        
