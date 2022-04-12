@@ -5,21 +5,49 @@
 
 \begin{sectionframe} % Custom environment required for section slides
 	\frametitle{FAIMS 3.0}
-	%\framesubtitle{Subtitle}
+	\framesubtitle{Report on current development}
 
-% 	Some section slide content
+
+
+\vfill
+\begin{columns}[T]
+
+\begin{column}{0.55\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Images/Screenshot_20211209_123600_Selection_001.png}
+\end{column}
+\begin{column}{0.35\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Images/Screenshot 2022-03-04 182606.jpg} 
+\end{column}
+
+\end{columns}
 
 % 	This is on another line
 \end{sectionframe}
 
 %----------------------------------------------------------------------------------------
 
+\begin{frame}{FAIMS 3.0 overview}
+
+\begin{itemize}
+    \item Ground up rebuild with a modern architecture (Javascript using NodeJS and Couch/Pouch DB);
+    \item Cross-platform data collection (Android/iOS/web-native); 
+    \item Improved interoperability with other software (for data 'round trips' with processing / analysis software); and
+    \item GUI for electronic field notebook creation (facilitating self-service customisation).
+\end{itemize}
+
+\end{frame}
+%----------------------------------------------------------------------------------------
+
 \begin{frame}{Where are we now?}
     \begin{itemize}
-        \item FAIMS v2.6 is nearing end of its useful life.
+        \item FAIMS v2.6 is depreciated but currently supporting legacy users.
         \item The FAIMS team did CSIRO ON Prime in 2016, completing 70+ interviews with clients / potential clients.
         \item A high-level technical plan for FAIMS v3.0 won a US design prize in 2017 \parencite{Bureau_of_Reclamation2017-xl}.
         \item ARDC Platforms announced a major co-investment in late 2019 to rebuild FAIMS using modern components.
+        \item We released a private alpha of FAIMS3 in late 2021.
+        \item We are currently supporting a major CSIRO initiative with data being collected in an early build of FAIMS3 as we speak.
     \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -79,7 +107,8 @@ Other planned, but not yet elaborated, technical capabilities include:
           \item Alpha prototype passed \href{https://doi.org/10.5281/zenodo.5030772}{user-acceptance testing} on 15 June 2021.
         \item FAIMS3 code has been licensed under the \href{https://www.apache.org/licenses/LICENSE-2.0}{Apache2} license, a Developer Contribution agreement is being applied to all code affirming the license. 
         \item The FAIMS3 repository is now public on \href{https://github.com/FAIMS/FAIMS3}{GitHub}.
-        \item FAIMS3 Beta development commenced on 5 July 2021 and will conclude 1 November. 
+        \item FAIMS3 Beta development commenced on 5 July 2021 and will conclude 1 November 2021. 
+        \item CSIRO supported extra development Jan 2022 -- July 2022 extra of ARDC funding for DAWE's Pilot Soils Monitoring and Incentives Program.
 
     \end{itemize}
 
